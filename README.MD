@@ -8,8 +8,8 @@
 <h3><strong>Primeiro passo:</strong> dentro da pasta do seu projeto adicione o arquivo pivot_stations.csv, e adicione também os arquivos abaixo: </h3>
 <br>
 <ul>
-<li><strong>Primeiro arquivo: </strong><a>(https://drive.google.com/file/d/1ZgzACETTKZ-hGUEd0Kyqt7bw5HLMsvq9/view)</a></li>
-<li><strong>Segundo arquivo: </strong><a>(https://drive.google.com/file/d/1Xk_hanCXTeOTt8Cs4QyEXeIgBrqtui0c/view)</a></li>
+<li><strong>Primeiro arquivo: </strong>https://drive.google.com/file/d/1ZgzACETTKZ-hGUEd0Kyqt7bw5HLMsvq9/view</li>
+<li><strong>Segundo arquivo: </strong>https://drive.google.com/file/d/1Xk_hanCXTeOTt8Cs4QyEXeIgBrqtui0c/view</li>
 </ul>
 <p>É importante que você tenha na sua máquina o Java instalado, recomendado o Java a partir da versão 17.0.5 ou superior para que o programa execute sem complicações.</p>
 <hr>
