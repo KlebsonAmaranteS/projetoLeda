@@ -43,12 +43,12 @@ public class Main {
 						if(init==1){
 						
 							Ordenacao1 ord1 = new Ordenacao1();
-							//ord1.casosMedios();
-							//ord1.arquivsInsertion(tamh);
-							//ord1.arquivsSelection(tamh);
-							//ord1.arquivsMerge();
+							ord1.casosMedios();
+							ord1.arquivsInsertion(tamh);
+							ord1.arquivsSelection(tamh);
+							ord1.arquivsMerge();
 							ord1.arquivsQuick();
-							//ord1.arquivsHeapSort(tamh);
+							ord1.arquivsHeapSort(tamh);
 						}
 						else if (init==2){
 						
