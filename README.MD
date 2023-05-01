@@ -5,8 +5,7 @@
 <h2 align="center"><strong>Para ter acesso ao repositorio, é necessário os seguintes passos: </strong></h2>
 <hr>
 <br>
-<h3><strong>Primeiro passo:</strong> o projeto está disposto em três pasta: "metodos", "ordenacoes" e "tranformacoes". 
-  Dentro da pasta geral do seu projeto adicione o arquivo pivot_stations.csv, e adicione também os arquivos abaixo: </h3>
+<h3><strong>Primeiro passo:</strong> o projeto está disposto em três pasta: "metodos", "ordenacoes" e "tranformacoes". Dentro da pasta geral do seu projeto adicione o arquivo pivot_stations.csv, e adicione também os arquivos abaixo: </h3>
 <br>
 <ul>
 <li><strong>Primeiro arquivo: </strong>https://drive.google.com/file/d/1ZgzACETTKZ-hGUEd0Kyqt7bw5HLMsvq9/view</li>
@@ -15,14 +14,13 @@
 <p>É importante que você tenha na sua máquina o Java instalado, recomendado o Java a partir da versão 17.0.5 ou superior para que o programa execute sem complicações.</p>
 <hr>
 <br>
-<h3><strong>Segundo passo:</strong> Depois de cumprir com as exigencias do primeiro passo, é recomendado fazer o debug do programa que está dentro da pasta /src, para que seja criado o arquivo .class de cada arquivo .java.</h3>
+<h3><strong>Segundo passo:</strong> Depois de cumprir com as exigencias do primeiro passo, é recomendado fazer a depuração do programa que está dentro da pasta /src, para que seja criado o arquivo .class de cada arquivo .java.</h3>
 <br>
 <ul>
-<li>Logo em seguida abra o pacote main que é onde está o executável.
-<li>Dentro do pacote main, dê o run para executar o programa.
+<li>Logo em seguida abra o pacote main, onde se encontra o programa principal. Dê o run para iniciar o processo
 </ul>
 <hr>
 
-<h3>Após o programa executar, você vai digitar 1 no teclado para que o programa inicie as transformações e gere os arquivos .csv, esse procedimento pode levar alguns minutos dependendo da sua máquina.</h3>
+<h3>Após o programa executar, digite 1 no teclado para que o programa inicie as transformações e gere os arquivos .csv de cada transformação, respectivamente. A depender do seu ambiente de testes, esse passo pode levar alguns tempo.</h3>
 <hr>
-Assim que as transformações forem concluidas, um menu vai aparecer para você escolher qual tipo de ordenação deseja fazer.
+Por fim, quando as transformações terminarem, um novo menu vai aparecer para você escolher qual tipo de ordenação deseja fazer (1, 2 ou 3).
