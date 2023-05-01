@@ -5,7 +5,8 @@
 <h2 align="center"><strong>Para ter acesso ao repositorio, é necessário os seguintes passos: </strong></h2>
 <hr>
 <br>
-<h3><strong>Primeiro passo:</strong> o projeto está disposto em três pasta: "metodos", "ordenacoes" e "tranformacoes". Dentro da pasta geral do seu projeto adicione o arquivo pivot_stations.csv, e adicione também os arquivos abaixo: </h3>
+<h3><strong>Primeiro passo:</strong> o projeto está disposto em três pasta: "metodos", "ordenacoes" e "tranformacoes". 
+  Dentro da pasta geral do seu projeto adicione o arquivo pivot_stations.csv, e adicione também os arquivos abaixo: </h3>
 <br>
 <ul>
 <li><strong>Primeiro arquivo: </strong>https://drive.google.com/file/d/1ZgzACETTKZ-hGUEd0Kyqt7bw5HLMsvq9/view</li>
