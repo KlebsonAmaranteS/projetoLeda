@@ -16,9 +16,10 @@
 <br>
 <h3><strong>Segundo passo:</strong> Depois de cumprir com as exigencias do primeiro passo, é recomendado fazer a depuração do programa que está dentro da pasta /src, para que seja criado o arquivo .class de cada arquivo .java.</h3>
 <br>
-<h3><strong>Terceiro passo:</strong> Abra o pacote main, onde se encontra o programa principal. Dê o run para iniciar o processo
 <hr>
-
+<br>
+<h3><strong>Terceiro passo:</strong> Abra o pacote main, onde se encontra o programa principal. Dê o run para iniciar o processo
+<br>
 <h3>Após o programa executar, digite 1 no teclado para que o programa inicie as transformações e gere os arquivos .csv de cada transformação, respectivamente. A depender do seu ambiente de testes, esse passo pode levar alguns tempo.</h3>
 <hr>
 Por fim, quando as transformações terminarem, um novo menu vai aparecer para você escolher qual tipo de ordenação deseja fazer (1, 2 ou 3).
