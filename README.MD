@@ -13,12 +13,7 @@
 </ul>
 <p>É importante que você tenha na sua máquina o Java instalado. Recomendado o Java a partir da versão 17.0.5 ou superior para que o programa execute sem complicações.</p>
 <hr>
-<br>
-<h3><strong>Segundo passo:</strong> Depois de cumprir com as exigencias do primeiro passo, é recomendado fazer a depuração do programa que está dentro da pasta /src, para que seja criado o arquivo .class de cada arquivo .java.</h3>
-<br>
-<hr>
-<br>
-<h3><strong>Terceiro passo:</strong> Abra o pacote main, onde se encontra o programa principal. Dê o run para iniciar o processo
+<h3><strong>Segundo passo:</strong> Abra o pacote main, onde se encontra o programa principal. Dê o run para iniciar o processo
 <br>
   
  - Após o programa executar, digite 1 no teclado para que o programa inicie as transformações e gere os arquivos .csv de cada transformação, respectivamente. A depender do seu ambiente de testes, esse passo pode levar alguns tempo.
