@@ -29,62 +29,8 @@ public class Ordenacao3 {
 		} 
 		read.close();
 	}
-	
-	public void casosMedios() {
-		
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_insertionSort_medioCaso.csv");
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_selectionSort_medioCaso");
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_quickSort_medioCaso");
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_mergeSort_medioCaso");
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_heapSort_medioCaso");
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_quickSortMedianaDe3_medioCaso");
-	}
-	
-	public static long alteraFormatData(String line) {
-		
-		try {
-			
-			String dataNF = methods.readLinha(line, 2, 3).substring(0,2);
-			String dataNF2 = methods.readLinha(line, 2, 3).substring(3,5);
-			dataNF = dataNF.replace("/","");
-			dataNF2 = dataNF2.replace("/","");
-			int n1 = Integer.parseInt(dataNF);
-			int n2 = Integer.parseInt(dataNF2);
-			
-			if(n1 < n2) {
-				SimpleDateFormat formatOrigin = new SimpleDateFormat("MM/dd/yyyy HH:mm");
-		       	String data1 = methods.readLinha(line, 2, 3);
-		    	Date data = formatOrigin.parse(data1); 
 
-		    	SimpleDateFormat formatFinl = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-		    	String formatAMD = formatFinl.format(data);
-		    	
-		    	formatAMD = formatAMD.replace("/","");
-		    	formatAMD = formatAMD.replace(":","");
-		    	formatAMD = formatAMD.replace(" ","");
-		    	return Long.parseLong(formatAMD);
-			}
-			else {
-				String formatAMD = methods.readLinha(line, 2, 3);
-				formatAMD = formatAMD.replace("/","");
-		    	formatAMD = formatAMD.replace(":","");
-		    	formatAMD = formatAMD.replace(" ","");
-		    	return Long.parseLong(formatAMD);
-			}
-		
-		}
-	    catch(ParseException e){
-	    	System.out.println("Error: " + e.getMessage());
-	    	return -1;
-	    }
-    }
-
+	//ordena
 	private void insertionSort(int n){
 	
 		long chv1, chv2;
@@ -110,19 +56,6 @@ public class Ordenacao3 {
 		
 	} 
 	
-	public void arquivsInsertion(int n) {
-		
-		//Melhor caso
-		insertionSort(n);
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_insertionSort_melhorCaso.csv");
-		
-		//Pior caso
-		methods.inverteArr(array, array.length);
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_insertionSort_piorCaso.csv");
-		} 
-	
 	private void selectionSort(int n) {	
 		
 		int idx, j;
@@ -142,18 +75,6 @@ public class Ordenacao3 {
 			}
 		}		
 	}
-	
-	public void arquivsSelection(int n) {
-		//Melhor caso
-		selectionSort(n); 
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_selectionSort_melhorCaso");
-				
-		//Pior caso
-		methods.inverteArr(array, array.length);
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_selectionSort_piorCaso");
-	} 
 	
 	private void heapSort(int tamArr)
     {
@@ -196,20 +117,6 @@ public class Ordenacao3 {
         }
     } 
     
-    public void arquivsHeapSort(int n) {
-		
-    	//Melhor caso
-		heapSort(n);
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_heapSort_melhorCaso");
-		
-		//Pior caso
-		methods.inverteArr(array, array.length);
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_heapSort_piorCaso");
-		
-	}
-    
     public static int particiona1(String arr[], int low, int high)
     {
         long pivot = alteraFormatData(arr[high]);
@@ -245,20 +152,6 @@ public class Ordenacao3 {
             quicksort(arr, pi+1, alt);
         }
     }
-    
-    public void arquivsQuickSrt(int n) {
-		
-    	//Melhor caso
-		quicksort(this.array, 0, n); 
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_quickSort_melhorCaso");
-		
-		//Pior caso
-		methods.inverteArr(array, array.length);
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_quickSort_piorCaso");
-		
-	} 
     
     private static int pivoMed(String array[], int baix, int alt) {
     	
@@ -338,20 +231,6 @@ public class Ordenacao3 {
 		return i + 1;
 	}
 	
-	public void arquivsQuickSort3(int n) {
-		
-		//Melhor caso
-		medQuickSort(this.array, 0, n);
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_quickSortMedianaDe3_melhorCaso");
-		
-		//Pior caso
-		methods.inverteArr(array, array.length);
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_quickSortMedianaDe3_piorCaso");
-		
-	}
-	
 	private static void merge(String array[], int esquerd, int m, int direit)
     {
         int num1 = m - esquerd + 1;
@@ -409,17 +288,142 @@ public class Ordenacao3 {
         }
     }
     
-    public void arquivsMergeSort(int n) {
-		
-    	//Melhor caso
-    	mergeSort(this.array, 0, n); 
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_mergeSort_melhorCaso");
-		
-		//Pior caso
-		methods.inverteArr(array, array.length);
-		methods.geraArquivCsv(this.array, this.column);
-		methods.alteraNomeArquiv("start_time_mergeSort_piorCaso");
-		
-	} 
+    //gera csv´s
+	public void arquivsInsertion(int n) {
+			
+			//Melhor caso
+			insertionSort(n);
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_insertionSort_melhorCaso.csv");
+			
+			//Pior caso
+			methods.inverteArr(array, array.length);
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_insertionSort_piorCaso.csv");
+			}
+	 
+	public void arquivsSelection(int n) {
+			//Melhor caso
+			selectionSort(n); 
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_selectionSort_melhorCaso");
+					
+			//Pior caso
+			methods.inverteArr(array, array.length);
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_selectionSort_piorCaso");
+		}
+	
+	public void arquivsHeapSort(int n) {
+			
+	    	//Melhor caso
+			heapSort(n);
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_heapSort_melhorCaso");
+			
+			//Pior caso
+			methods.inverteArr(array, array.length);
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_heapSort_piorCaso");
+			
+		}
+	
+	public void arquivsQuickSrt(int n) {
+			
+	    	//Melhor caso
+			quicksort(this.array, 0, n); 
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_quickSort_melhorCaso");
+			
+			//Pior caso
+			methods.inverteArr(array, array.length);
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_quickSort_piorCaso");
+			
+		}
+	
+	public void arquivsQuickSort3(int n) {
+			
+			//Melhor caso
+			medQuickSort(this.array, 0, n);
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_quickSortMedianaDe3_melhorCaso");
+			
+			//Pior caso
+			methods.inverteArr(array, array.length);
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_quickSortMedianaDe3_piorCaso");
+			
+		}
+	
+	public void arquivsMergeSort(int n) {
+			
+	    	//Melhor caso
+	    	mergeSort(this.array, 0, n); 
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_mergeSort_melhorCaso");
+			
+			//Pior caso
+			methods.inverteArr(array, array.length);
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_mergeSort_piorCaso");
+			
+		}
+    
+    
+    //método
+	public static long alteraFormatData(String line) {
+			
+			try {
+				
+				String dataNF = methods.readLinha(line, 2, 3).substring(0,2);
+				String dataNF2 = methods.readLinha(line, 2, 3).substring(3,5);
+				dataNF = dataNF.replace("/","");
+				dataNF2 = dataNF2.replace("/","");
+				int n1 = Integer.parseInt(dataNF);
+				int n2 = Integer.parseInt(dataNF2);
+				
+				if(n1 < n2) {
+					SimpleDateFormat formatOrigin = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+			       	String data1 = methods.readLinha(line, 2, 3);
+			    	Date data = formatOrigin.parse(data1); 
+	
+			    	SimpleDateFormat formatFinl = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+			    	String formatAMD = formatFinl.format(data);
+			    	
+			    	formatAMD = formatAMD.replace("/","");
+			    	formatAMD = formatAMD.replace(":","");
+			    	formatAMD = formatAMD.replace(" ","");
+			    	return Long.parseLong(formatAMD);
+				}
+				else {
+					String formatAMD = methods.readLinha(line, 2, 3);
+					formatAMD = formatAMD.replace("/","");
+			    	formatAMD = formatAMD.replace(":","");
+			    	formatAMD = formatAMD.replace(" ","");
+			    	return Long.parseLong(formatAMD);
+				}
+			
+			}
+		    catch(ParseException e){
+		    	System.out.println("Error: " + e.getMessage());
+		    	return -1;
+		    }
+	    }
+	
+	public void casosMedios() {
+			
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_insertionSort_medioCaso.csv");
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_selectionSort_medioCaso");
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_quickSort_medioCaso");
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_mergeSort_medioCaso");
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_heapSort_medioCaso");
+			methods.geraArquivCsv(this.array, this.column);
+			methods.alteraNomeArquiv("start_time_quickSortMedianaDe3_medioCaso");
+		}
 }

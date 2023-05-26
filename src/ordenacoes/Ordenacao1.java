@@ -22,20 +22,8 @@ public class Ordenacao1 {
 		}
 		
 	} 
-	public void casosMedios() {
-		
-		methods.geraArquivCsv(this.arr, this.column);
-		methods.alteraNomeArquiv("station_insertionSort_medioCaso.csv");
-		methods.geraArquivCsv(this.arr, this.column);
-		methods.alteraNomeArquiv("station_selectionSort_medioCaso.csv");
-		methods.geraArquivCsv(this.arr, this.column);
-		methods.alteraNomeArquiv("station_mergeSort_medioCaso.csv");
-		methods.geraArquivCsv(this.arr, this.column);
-		methods.alteraNomeArquiv("station_quickSort_medioCaso.csv");
-		methods.geraArquivCsv(this.arr, this.column);
-		methods.alteraNomeArquiv("station_heapSort_medioCaso.csv");
-	}
 	
+	//ordena
 	private void insertionSort(int n) {
 		int i,j;  
         String var;
@@ -53,19 +41,6 @@ public class Ordenacao1 {
             this.arr[i + 1] = var;
         }
 	}
-	
-	public void arquivsInsertion(int n) {
-		
-		//Melhor caso
-		insertionSort(n); 
-		methods.geraArquivCsv(this.arr, this.column);
-		methods.alteraNomeArquiv("station_insertionSort_melhorCaso.csv");
-		
-		//Pior caso
-		methods.inverteArr(arr, arr.length);
-		methods.geraArquivCsv(this.arr, this.column);
-		methods.alteraNomeArquiv("station_insertionSort_piorCaso.csv");
-	} 
 	
 	private void selectionSort(int n){
 		
@@ -86,21 +61,7 @@ public class Ordenacao1 {
 	            this.arr[i] = temp;
 	        }
 	    }
-    } 
-	
-	public void arquivsSelection(int n) {
-		
-		//Melhor caso
-		selectionSort(n); 
-		methods.geraArquivCsv(this.arr, this.column);
-		methods.alteraNomeArquiv("station_selectionSort_melhorCaso.csv");
-		
-		//Pior caso
-		methods.inverteArr(arr, arr.length);
-		methods.geraArquivCsv(this.arr, this.column);
-		methods.alteraNomeArquiv("station_selectionSort_piorCaso.csv");
-		
-	} 
+    } 	
 	
 	private void mergeSort(String[] nomes) {
         if (nomes.length >= 2) {
@@ -135,20 +96,6 @@ public class Ordenacao1 {
         }
     } 
     
-    public void arquivsMerge() {
-		
-    	//Melhor caso
-		mergeSort(this.arr); 
-		methods.geraArquivCsv(this.arr, this.column);
-		methods.alteraNomeArquiv("station_mergeSort_melhorCaso.csv");
-		
-		//Pior caso
-		methods.inverteArr(arr, arr.length);
-		methods.geraArquivCsv(this.arr, this.column);
-		methods.alteraNomeArquiv("station_mergeSort_piorCaso.csv");
-		
-	} 
-    
     private void quickSort(String array[], int init, int fim) {
 	    int i = init;
 	    int k = fim;
@@ -167,27 +114,6 @@ public class Ordenacao1 {
 	        quickSort(array, k + 1, fim);
 	    }
 	} 
-    
-	private void troca(String array[], int idx1, int idx2) {
-	    String temp = array[idx1];
-	    array[idx1] = array[idx2];
-	    array[idx2] = temp;
-	}
-	
-	public void arquivsQuick() {
-		
-		//Melhor caso
-		quickSort(this.arr, 0, this.arr.length - 1); 
-		methods.geraArquivCsv(this.arr, this.column);
-		methods.alteraNomeArquiv("station_quickSort_melhorCaso.csv");
-		
-		//Pior caso
-		
-		methods.inverteArr(arr, arr.length);
-		methods.geraArquivCsv(this.arr, this.column);
-		methods.alteraNomeArquiv("station_quickSort_piorCaso.csv");
-		
-	}
 	
 	private void heapSort( int i) {
         for (int j = i / 2; j >= 0; j--)
@@ -199,8 +125,88 @@ public class Ordenacao1 {
             busca(this.arr, k, 0);
         }
     }
+    
+    //gera csv´s
+	public void arquivsInsertion(int n) {
+			
+			//Melhor caso
+			insertionSort(n); 
+			methods.geraArquivCsv(this.arr, this.column);
+			methods.alteraNomeArquiv("station_insertionSort_melhorCaso.csv");
+			
+			//Pior caso
+			methods.inverteArr(arr, arr.length);
+			methods.geraArquivCsv(this.arr, this.column);
+			methods.alteraNomeArquiv("station_insertionSort_piorCaso.csv");
+		} 
 	
-    private static void busca(String as[], int i, int j) {
+	public void arquivsSelection(int n) {
+			
+			//Melhor caso
+			selectionSort(n); 
+			methods.geraArquivCsv(this.arr, this.column);
+			methods.alteraNomeArquiv("station_selectionSort_melhorCaso.csv");
+			
+			//Pior caso
+			methods.inverteArr(arr, arr.length);
+			methods.geraArquivCsv(this.arr, this.column);
+			methods.alteraNomeArquiv("station_selectionSort_piorCaso.csv");
+			
+		} 
+	
+	 public void arquivsMerge() {
+			
+	    	//Melhor caso
+			mergeSort(this.arr); 
+			methods.geraArquivCsv(this.arr, this.column);
+			methods.alteraNomeArquiv("station_mergeSort_melhorCaso.csv");
+			
+			//Pior caso
+			methods.inverteArr(arr, arr.length);
+			methods.geraArquivCsv(this.arr, this.column);
+			methods.alteraNomeArquiv("station_mergeSort_piorCaso.csv");
+			
+		} 
+	
+	
+	public void arquivsQuick() {
+			
+			//Melhor caso
+			quickSort(this.arr, 0, this.arr.length - 1); 
+			methods.geraArquivCsv(this.arr, this.column);
+			methods.alteraNomeArquiv("station_quickSort_melhorCaso.csv");
+			
+			//Pior caso
+			
+			methods.inverteArr(arr, arr.length);
+			methods.geraArquivCsv(this.arr, this.column);
+			methods.alteraNomeArquiv("station_quickSort_piorCaso.csv");
+			
+		}
+	
+	
+	public void arquivsHeapSort(int n) {
+			
+	    	//Melhor caso
+			heapSort(n); 
+			methods.geraArquivCsv(this.arr, this.column);
+			methods.alteraNomeArquiv("station_heapSort_melhorCaso.csv");
+			
+			//Pior caso
+			
+			methods.inverteArr(arr, arr.length);
+			methods.geraArquivCsv(this.arr, this.column);
+			methods.alteraNomeArquiv("station_heapSort_piorCaso.csv");
+			
+		}
+	
+	private void troca(String array[], int idx1, int idx2) {
+	    String temp = array[idx1];
+	    array[idx1] = array[idx2];
+	    array[idx2] = temp;
+	}
+	
+	private static void busca(String as[], int i, int j) {
         int k = 2 * j + 1;
         if (k < i) {
             if (k + 1 < i && methods.readLinha(as[k], 9, 10).compareTo(methods.readLinha(as[k+1], 9, 10)) < 0)
@@ -212,20 +218,21 @@ public class Ordenacao1 {
                 busca(as, i, k);
             }
         }
-    } 
-    
-    public void arquivsHeapSort(int n) {
-		
-    	//Melhor caso
-		heapSort(n); //Ordenando
-		methods.geraArquivCsv(this.arr, this.column);
-		methods.alteraNomeArquiv("station_heapSort_melhorCaso.csv");
-		
-		//Pior caso
-		
-		methods.inverteArr(arr, arr.length);
-		methods.geraArquivCsv(this.arr, this.column);
-		methods.alteraNomeArquiv("station_heapSort_piorCaso.csv");
-		
+    }
+	
+	public void casosMedios() {
+			
+			methods.geraArquivCsv(this.arr, this.column);
+			methods.alteraNomeArquiv("station_insertionSort_medioCaso.csv");
+			methods.geraArquivCsv(this.arr, this.column);
+			methods.alteraNomeArquiv("station_selectionSort_medioCaso.csv");
+			methods.geraArquivCsv(this.arr, this.column);
+			methods.alteraNomeArquiv("station_mergeSort_medioCaso.csv");
+			methods.geraArquivCsv(this.arr, this.column);
+			methods.alteraNomeArquiv("station_quickSort_medioCaso.csv");
+			methods.geraArquivCsv(this.arr, this.column);
+			methods.alteraNomeArquiv("station_heapSort_medioCaso.csv");
+		}
+	
 	}
-}
+

@@ -2,6 +2,7 @@ package main;
 
 import java.io.IOException;
 import java.util.Scanner;
+
 import ordenacoes.Ordenacao1;
 import ordenacoes.Ordenacao2;
 import ordenacoes.Ordenacao3;
@@ -14,27 +15,27 @@ public class Main {
 		try {
 			Scanner entrada = new Scanner(System.in);
 
-			System.out.print("Informe o numero 1 para comeÃ§ar as transformaÃ§Ãµes ou 0 para sair:\n ");
+			System.out.print("Informe o numero 1 para começar as transformações ou 0 para sair:\n ");
 			int numero = entrada.nextInt();
 			if (numero == 1) {
 			try (Scanner usuario = new Scanner(System.in)) {
 				System.out.println(
-						"------------------Menu-------------\nAs transformaÃ§Ãµes estÃ£o sendo executadas!\nAguarde alguns minutos\nGerando ....");
+						"------------------Menu-------------\nAs transformações estão sendo executadas!\nAguarde alguns minutos\nGerando ....");
 				Transform1 transformacao1 = new Transform1();
-				transformacao1.readArquivStations();
+				transformacao1.readArquivoStations();
 				transformacao1.extractsMetroTrips();
 				Transform2 transformacao2 = new Transform2();
-				transformacao2.newFile();
+				transformacao2.createFilteredFile();
 				Transform3 transformacao3 = new Transform3();
-				transformacao3.newFile2();
+				transformacao3.createFilteredFile2();
 
 				System.out.println("Finalizado com sucesso, pode conferir na pasta do projeto\nO pr...\n");
 
 				int init = 0;
 				int tamh = 0;
 				do {
-					System.out.println("Para ordenar tem trÃªs formas: 1Â°, 2Â°, 3Â° ,digite o nÃºmero correspondente:(1 ou 2 ou 3) e (4) para sair");
-					System.out.println("\n1 - Ordenar o arquivo completo pelo nomes das estaÃ§Ãµes\n2 - Ordenar o arquivo pelo campo de duraÃ§Ã£o da viagem \n3 - Ordenar o arquivo pela data de inÃ­cio da viagem \n4 - exit");
+					System.out.println("Para ordenar tem três formas: 1°, 2°, 3° ,digite o número correspondente:(1 ou 2 ou 3) e (4) para sair");
+					System.out.println("\n1 - Ordenar o arquivo completo pelo nomes das estações\n2 - Ordenar o arquivo pelo campo de duração da viagem \n3 - Ordenar o arquivo pela data de início da viagem \n4 - exit");
 					init = usuario.nextInt();
 					System.out.println("Deseja ordenar em quantas linhas? (valor maximo = 1250836): ");
 					tamh = usuario.nextInt();
@@ -75,10 +76,10 @@ public class Main {
 						}
 						
 						else if (init==4){
-							System.out.println("Sua ordenaÃ§Ã£o foi finalizada !");
+							System.out.println("Sua ordenação foi finalizada !");
 						}
 						else{
-							System.out.println("OpÃ§Ã£o InvÃ¡lida");
+							System.out.println("Opção Inválida");
 						}
 					
 				} while (init < 4 && init > 0);

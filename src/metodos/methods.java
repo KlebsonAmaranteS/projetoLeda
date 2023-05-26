@@ -68,4 +68,10 @@ public class methods {
 			--j;
 		}
 	}
+
+	public static void shuffleArr(String[] arr) {
+		// TODO Auto-generated method stub
+		
+	}
 }
+
